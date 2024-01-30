@@ -38,7 +38,8 @@ class RSim:
         self.simulator.reset(placement_pos["ball_pos"], placement_pos["blue_robots_pos"], placement_pos["yellow_robots_pos"])
 
     def stop(self):
-        del self.simulator
+        pass
+        # del self.simulator
 
     def send_commands(self, commands):
         raise NotImplementedError
