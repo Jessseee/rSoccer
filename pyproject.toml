@@ -1,4 +1,16 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
 
-[tool.setuptools_scm]
+[project]
+version = "0.0.1"
+name = "rsoccer"
+description = "reinforcement learning for SSL and VSS robot soccer"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cleanrl", "cleanrl_utils", "rsoccer_gym"]

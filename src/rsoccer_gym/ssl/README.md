@@ -17,6 +17,7 @@ The base environment define normalization methods using field size and robot par
 - [**SSLDribbling-v0**](#ssldribbling-v0)
 - [**SSLContestedPossession-v0**](#sslcontestedpossession-v0)
 - [**SSLPassEndurance-v0**](#sslpassendurance-v0)
+- [**SSLGoToBall-v0**](#sslgotoball-v0)
 
 # SSLStaticDefenders-v0
 In this environment the yellow team has six stopped robots and the blue team has one controlled robot. The episode ends when a goal occurs.
@@ -27,33 +28,33 @@ In this environment the yellow team has six stopped robots and the blue team has
     - Box(24,)
     - Value Range: [-1.25, 1.25] (Normalized)
 
-    | Index        	| Observation                	|
-    |--------------	|----------------------------	|
-    | 0            	| Ball X                     	|
-    | 1            	| Ball Y                     	|
-    | 2            	| Ball Vx                    	|
-    | 3            	| Ball Vy                    	|
-    | 4  	        | id 0 Blue Robot X          	|
-    | 5  	        | id 0 Blue Robot Y          	|
-    | 6  	        | id 0 Blue Robot sin(theta) 	|
-    | 7  	        | id 0 Blue Robot cos(theta) 	|
-    | 8  	        | id 0 Blue Robot Vx         	|
-    | 9  	        | id 0 Blue Robot Vy         	|
-    | 10 	        | id 0 Blue Robot v_theta    	|
-    | 11 + (2 * i) 	| id i Yellow Robot X        	|
-    | 12 + (2 * i) 	| id i Yellow Robot Y        	|
+    | Index        | Observation                |
+    |--------------|----------------------------|
+    |              | Ball X                     |
+    | 1            | Ball Y                     |
+    | 2            | Ball Vx                    |
+    | 3            | Ball Vy                    |
+    | 4            | id 0 Blue Robot X          |
+    | 5            | id 0 Blue Robot Y          |
+    | 6            | id 0 Blue Robot sin(theta) |
+    | 7            | id 0 Blue Robot cos(theta) |
+    | 8            | id 0 Blue Robot v_X        |
+    | 9            | id 0 Blue Robot v_Y        |
+    | 10           | id 0 Blue Robot v_theta    |
+    | 11 + (2 * i) | id i Yellow Robot X        |
+    | 12 + (2 * i) | id i Yellow Robot Y        |
 
 - ## Actions:
     - Box(5,)
     - Value Range: [-1, 1]
 
-    | Index | Action        |
-    |-------|---------------|
-    | 0     | Axis X speed |
-    | 1     | Axis Y speed |
+    | Index | Action           |
+    |-------|------------------|
+    | 0     | Axis X speed     |
+    | 1     | Axis Y speed     |
     | 2     | Axis theta speed |
-    | 3     | Kicker power |
-    | 4     | Active Dribbler |
+    | 3     | Kicker power     |
+    | 4     | Active Dribbler  |
 
 - ## Rewards:
     - Move
@@ -74,34 +75,34 @@ In this environment the yellow team has four stopped robots and the blue team ha
     - Box(21,)
     - Value Range: [-1.25, 1.25] (Normalized)
 
-    | Index        	| Observation                	|
-    |--------------	|----------------------------	|
-    | 0	            | Actual Gate               	|
-    | 1            	| Ball X                     	|
-    | 2            	| Ball Y                     	|
-    | 3            	| Ball Vx                    	|
-    | 4            	| Ball Vy                    	|
-    | 5  	        | id 0 Blue Robot X          	|
-    | 6  	        | id 0 Blue Robot Y          	|
-    | 7  	        | id 0 Blue Robot sin(theta) 	|
-    | 8  	        | id 0 Blue Robot cos(theta) 	|
-    | 9  	        | id 0 Blue Robot Vx         	|
-    | 10            | id 0 Blue Robot Vy         	|
-    | 11 	        | id 0 Blue Robot v_theta    	|
-    | 12 	        | id 0 Blue Robot infrared    	|
-    | 13 + (2 * i) 	| id i Yellow Robot X        	|
-    | 13 + (2 * i) 	| id i Yellow Robot Y        	|
+    | Index        | Observation                |
+    |--------------|----------------------------|
+    | 0            | Actual Gate                |
+    | 1            | Ball X                     |
+    | 2            | Ball Y                     |
+    | 3            | Ball Vx                    |
+    | 4            | Ball Vy                    |
+    | 5            | id 0 Blue Robot X          |
+    | 6            | id 0 Blue Robot Y          |
+    | 7            | id 0 Blue Robot sin(theta) |
+    | 8            | id 0 Blue Robot cos(theta) |
+    | 9            | id 0 Blue Robot v_X        |
+    | 10           | id 0 Blue Robot v_Y        |
+    | 11           | id 0 Blue Robot v_theta    |
+    | 12           | id 0 Blue Robot infrared   |
+    | 13 + (2 * i) | id i Yellow Robot X        |
+    | 13 + (2 * i) | id i Yellow Robot Y        |
 
 - ## Actions:
     - Box(4,)
     - Value Range: [-1, 1]
 
-    | Index | Action        |
-    |-------|---------------|
-    | 0     | Axis X speed |
-    | 1     | Axis Y speed |
+    | Index | Action           |
+    |-------|------------------|
+    | 0     | Axis X speed     |
+    | 1     | Axis Y speed     |
     | 2     | Axis theta speed |
-    | 3     | Active Dribbler |
+    | 3     | Active Dribbler  |
 
 
 - ## Rewards:
@@ -120,35 +121,35 @@ In this environment each team has 1 robot, in which the id 0 blue robot is contr
     - Box(14,)
     - Value Range: [-1.25, 1.25] (Normalized)
 
-    | Index        	| Observation                	|
-    |--------------	|----------------------------	|
-    | 0	            | Actual Gate               	|
-    | 1            	| Ball X                     	|
-    | 2            	| Ball Y                     	|
-    | 3            	| Ball Vx                    	|
-    | 4            	| Ball Vy                    	|
-    | 5  	        | id 0 Blue Robot X          	|
-    | 6  	        | id 0 Blue Robot Y          	|
-    | 7  	        | id 0 Blue Robot sin(theta) 	|
-    | 8  	        | id 0 Blue Robot cos(theta) 	|
-    | 9  	        | id 0 Blue Robot Vx         	|
-    | 10            | id 0 Blue Robot Vy         	|
-    | 11 	        | id 0 Blue Robot v_theta    	|
-    | 12 	        | id 0 Blue Robot infrared    	|
-    | 13 	        | id 0 Yellow Robot X        	|
-    | 14 	        | id 0 Yellow Robot Y        	|
+    | Index | Observation                |
+    |-------|----------------------------|
+    | 0     | Actual Gate                |
+    | 1     | Ball X                     |
+    | 2     | Ball Y                     |
+    | 3     | Ball Vx                    |
+    | 4     | Ball Vy                    |
+    | 5     | id 0 Blue Robot X          |
+    | 6     | id 0 Blue Robot Y          |
+    | 7     | id 0 Blue Robot sin(theta) |
+    | 8     | id 0 Blue Robot cos(theta) |
+    | 9     | id 0 Blue Robot v_X        |
+    | 10    | id 0 Blue Robot v_Y        |
+    | 11    | id 0 Blue Robot v_theta    |
+    | 12    | id 0 Blue Robot infrared   |
+    | 13    | id 0 Yellow Robot X        |
+    | 14    | id 0 Yellow Robot Y        |
 
 - ## Actions:
     - Box(5,)
     - Value Range: [-1, 1]
 
-    | Index | Action        |
-    |-------|---------------|
-    | 0     | Axis X speed |
-    | 1     | Axis Y speed |
+    | Index | Action           |
+    |-------|------------------|
+    | 0     | Axis X speed     |
+    | 1     | Axis Y speed     |
     | 2     | Axis theta speed |
-    | 3     | Kicker power |
-    | 4     | Active Dribbler |
+    | 3     | Kicker power     |
+    | 4     | Active Dribbler  |
 
 - ## Rewards:
     - Move
@@ -169,31 +170,31 @@ In this environment the  episode  begins  with  the  two robots at random positi
     - Box(18,)
     - Value Range: [-1.25, 1.25] (Normalized)
 
-    | Index        	| Observation                	|
-    |--------------	|----------------------------	|
-    | 0            	| Ball X                     	|
-    | 1            	| Ball Y                     	|
-    | 2            	| Ball Vx                    	|
-    | 3            	| Ball Vy                    	|
-    | 4 + (7 * i)  	| id i Blue Robot X          	|
-    | 5 + (7 * i)  	| id i Blue Robot Y          	|
-    | 6 + (7 * i)  	| id i Blue Robot sin(theta) 	|
-    | 7 + (7 * i)  	| id i Blue Robot cos(theta) 	|
-    | 8 + (7 * i)  	| id i Blue Robot Vx         	|
-    | 9  + (7 * i) 	| id i Blue Robot Vy         	|
-    | 10 + (7 * i) 	| id i Blue Robot v_theta    	|
-    | 11 + (7 * i) 	| id i Blue Robot infrared    	|
-    | 12 + (7 * i) 	| id i Blue Robot is_shooter   	|
+    | Index        | Observation                |
+    |--------------|----------------------------|
+    | 0            | Ball X                     |
+    | 1            | Ball Y                     |
+    | 2            | Ball Vx                    |
+    | 3            | Ball Vy                    |
+    | 4 + (7 * i)  | id i Blue Robot X          |
+    | 5 + (7 * i)  | id i Blue Robot Y          |
+    | 6 + (7 * i)  | id i Blue Robot sin(theta) |
+    | 7 + (7 * i)  | id i Blue Robot cos(theta) |
+    | 8 + (7 * i)  | id i Blue Robot v_X        |
+    | 9  + (7 * i) | id i Blue Robot v_Y        |
+    | 10 + (7 * i) | id i Blue Robot v_theta    |
+    | 11 + (7 * i) | id i Blue Robot infrared   |
+    | 12 + (7 * i) | id i Blue Robot is_shooter |
 
 - ## Actions:
     - Box(3,)
     - Value Range: [-1, 1]
 
-    | Index | Action        |
-    |-------|---------------|
+    | Index | Action           |
+    |-------|------------------|
     | 0     | Axis theta speed |
-    | 1     | Kicker power |
-    | 2     | Active Dribbler |
+    | 1     | Kicker power     |
+    | 2     | Active Dribbler  |
 
 - ## Rewards:
     - Ball potential gradient
@@ -203,7 +204,7 @@ In this environment the  episode  begins  with  the  two robots at random positi
 
 -----
 
-the  episode  begins  with  the  two  controlled  agents  at random positi on with the ball on the dribbler of one of them. There are no opponents in this environment. The objective is to perform as many passes as possible in 30 seconds. The episode ends if any pass does not reach the teamate.
+the  episode  begins  with  the  two  controlled  agents  at random position with the ball on the dribbler of one of them. There are no opponents in this environment. The objective is to perform as many passes as possible in 30 seconds. The episode ends if any pass does not reach the teammate.
 
 ![SSLPassEnduranceMA-v0 environment rendering gif](../../.github/resources/pass_endurance_ma.gif)
 
@@ -211,33 +212,33 @@ the  episode  begins  with  the  two  controlled  agents  at random positi on wi
     - Box(18,)
     - Value Range: [-1.25, 1.25] (Normalized)
 
-    | Index        	| Observation                	|
-    |--------------	|----------------------------	|
-    | 0            	| Ball X                     	|
-    | 1            	| Ball Y                     	|
-    | 2            	| Ball Vx                    	|
-    | 3            	| Ball Vy                    	|
-    | 4 + (7 * i)  	| id i Blue Robot X          	|
-    | 5 + (7 * i)  	| id i Blue Robot Y          	|
-    | 6 + (7 * i)  	| id i Blue Robot sin(theta) 	|
-    | 7 + (7 * i)  	| id i Blue Robot cos(theta) 	|
-    | 8 + (7 * i)  	| id i Blue Robot Vx         	|
-    | 9  + (7 * i) 	| id i Blue Robot Vy         	|
-    | 10 + (7 * i) 	| id i Blue Robot v_theta    	|
-    | 11 + (7 * i) 	| id i Blue Robot infrared    	|
-    | 12 + (7 * i) 	| id i Blue Robot is_shooter   	|
+    | Index        | Observation                |
+    |--------------|----------------------------|
+    | 0            | Ball X                     |
+    | 1            | Ball Y                     |
+    | 2            | Ball Vx                    |
+    | 3            | Ball Vy                    |
+    | 4 + (7 * i)  | id i Blue Robot X          |
+    | 5 + (7 * i)  | id i Blue Robot Y          |
+    | 6 + (7 * i)  | id i Blue Robot sin(theta) |
+    | 7 + (7 * i)  | id i Blue Robot cos(theta) |
+    | 8 + (7 * i)  | id i Blue Robot v_X        |
+    | 9  + (7 * i) | id i Blue Robot v_Y        |
+    | 10 + (7 * i) | id i Blue Robot v_theta    |
+    | 11 + (7 * i) | id i Blue Robot infrared   |
+    | 12 + (7 * i) | id i Blue Robot is_shooter |
 
 - ## Actions:
     - Box(5,)
     - Value Range: [-1, 1]
 
-    | Index | Action        |
-    |-------|---------------|
-    | 0     | Axis X speed |
-    | 1     | Axis Y speed |
+    | Index | Action           |
+    |-------|------------------|
+    | 0     | Axis X speed     |
+    | 1     | Axis Y speed     |
     | 2     | Axis theta speed |
-    | 3     | Kicker power |
-    | 4     | Active Dribbler |
+    | 3     | Kicker power     |
+    | 4     | Active Dribbler  |
 
 - ## Rewards:
     - Ball potential gradient

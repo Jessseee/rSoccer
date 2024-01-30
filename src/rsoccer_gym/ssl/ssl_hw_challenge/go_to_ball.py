@@ -40,8 +40,13 @@ class SSLGoToBallEnv(SSLBaseEnv):
     """
 
     def __init__(self, field_type=1, n_robots_yellow=0, render_mode=None):
-        super().__init__(field_type=field_type, n_robots_blue=1,
-                         n_robots_yellow=n_robots_yellow, time_step=0.025, render_mode=render_mode)
+        super().__init__(
+            field_type=field_type,
+            n_robots_blue=1,
+            n_robots_yellow=n_robots_yellow,
+            time_step=0.025,
+            render_mode=render_mode
+        )
 
         self.reward_shaping_total = None
         self.action_space = gym.spaces.Box(low=-1, high=1,

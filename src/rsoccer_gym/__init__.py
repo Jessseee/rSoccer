@@ -1,8 +1,6 @@
 from gymnasium.envs.registration import register
 
-register(
-    id="VSS-v0", entry_point="rsoccer_gym.vss.env_vss:VSSEnv", max_episode_steps=1200
-)
+register(id="VSS-v0", entry_point="rsoccer_gym.environments.vss.vss_gym:VSSEnv", max_episode_steps=1200)
 
 register(
     id="SSLStaticDefenders-v0",
@@ -25,6 +23,12 @@ register(
 
 register(
     id="SSLPassEndurance-v0",
-    entry_point="rsoccer_gym.ssl.ssl_hw_challenge:SSLPassEnduranceEnv",
+    entry_point="rsoccer_gym.ssl.ssl_hw_challenge.pass_endurance:SSLPassEnduranceEnv",
+    max_episode_steps=1200,
+)
+
+register(
+    id="SSLGoToBall-v0",
+    entry_point="rsoccer_gym.ssl.ssl_hw_challenge.go_to_ball:SSLGoToBallEnv",
     max_episode_steps=1200,
 )
